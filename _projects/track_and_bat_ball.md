@@ -1,6 +1,6 @@
 ---
 title: "Ball Tracking and Batting"
-excerpt: "A robot that could track the ball, predict its motion and bat it back.<br/><img src='/images/ball_batting3.gif'>"
+excerpt: "A robot that can track the ball, predict its motion and bat it back.<br/><img src='/images/ball_batting3.gif'>"
 collection: projects
 ---
 
