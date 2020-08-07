@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a PhD department in Electrical and Computer Engineering at University of Texas at Austin. 
+I am a PhD student in Electrical and Computer Engineering at University of Texas at Austin. 
 
 Previously, I completed my M.S. in Computer Science at Columbia University. I was a member of [Columbia Robotics Lab](http://www.cs.columbia.edu/robotics/) advised by Professor [Peter Allen](https://www.cs.columbia.edu/~allen/) and Pe'er Group advised by Professor [Itsik Pe'er](http://www.cs.columbia.edu/~itsik/). My research interest focuses on Reinforcement Learning and Probabilistic Graphical Models.
 
