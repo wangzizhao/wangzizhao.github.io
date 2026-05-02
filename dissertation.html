@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Dissertation - Zizhao Wang</title>
+    <meta name="author" content="Zizhao Wang">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  </head>
+
+  <body>
+    <main class="dissertation-page">
+      <header class="dissertation-topbar">
+        <a class="dissertation-brand" href="index.html">Zizhao Wang</a>
+        <nav class="dissertation-nav" aria-label="Dissertation navigation">
+          <a href="#abstract">Abstract</a>
+          <a href="#defense">Defense</a>
+          <a href="#projects">Projects</a>
+          <a href="#downloads">Downloads</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section class="dissertation-hero">
+        <p class="dissertation-kicker">Ph.D. Dissertation</p>
+        <h1>Causality-Inspired Reinforcement Learning:<br>State Abstractions, Exploration, and Representations</h1>
+        <p class="dissertation-meta">
+          Zizhao Wang, The University of Texas at Austin, 2026<br>
+          Supervisor: <a href="https://www.cs.utexas.edu/~pstone/" target="_blank" rel="noopener">Peter Stone</a>
+        </p>
+        <div class="dissertation-actions">
+          <a class="dissertation-button" href="documents/dissertation.pdf" target="_blank">Full Dissertation</a>
+          <a class="dissertation-button" href="documents/defense_slides.pdf" target="_blank">Defense Slides</a>
+        </div>
+      </section>
+
+      <section class="dissertation-section" id="abstract">
+        <h2>Abstract</h2>
+        <p>
+          Reinforcement learning offers a versatile paradigm for developing autonomous decision-making agents, but many
+          current algorithms still require large amounts of data and generalize poorly. One central difficulty is that
+          correlation-based learning can entangle all observed state factors with actions, increasing sample complexity
+          and making learned policies vulnerable to spurious correlations.
+        </p>
+        <p>
+          This dissertation studies how causal reasoning can improve the sample efficiency and generalization of RL
+          algorithms. Through the lens of causality, an agent can reason about which actions and state factors affect
+          future states, and which factors determine task success. These structures support more accurate dynamics and
+          reward models, more compact state abstractions, strategic exploration, reusable skill discovery, and structured
+          representations for low-level observations.
+        </p>
+        <p>
+          The thesis contributes methods for learning minimal causal state abstractions, designing intrinsic rewards from
+          local causal dependencies, discovering reusable skills that generate meaningful factor interactions, and
+          extracting structured state and action representations when high-level factors are not directly available.
+          Together, these contributions help agents infer the causes and consequences of their actions, generalize to
+          unseen states, and learn new tasks with limited data.
+        </p>
+      </section>
+
+      <section class="dissertation-section" id="defense">
+        <h2>Defense Presentation</h2>
+        <iframe class="dissertation-slides" title="Defense slides" src="documents/defense_slides.pdf#view=FitH"></iframe>
+      </section>
+
+      <section class="dissertation-section" id="projects">
+        <h2>Related Projects</h2>
+        <div class="dissertation-projects">
+          <article class="dissertation-project">
+            <h3>Causal Dynamics Learning</h3>
+            <p>Task-independent state abstractions from causal dynamics models.</p>
+            <p>
+              <a href="https://arxiv.org/pdf/2206.13452" target="_blank" rel="noopener">paper</a> /
+              <a href="documents/cdl_slides.pdf" target="_blank">slides</a> /
+              <a href="https://github.com/wangzizhao/CausalDynamicsLearning" target="_blank" rel="noopener">code</a>
+            </p>
+          </article>
+
+          <article class="dissertation-project">
+            <h3>Causal Bisimulation Modeling</h3>
+            <p>Minimal and reusable causal state abstractions for reinforcement learning.</p>
+            <p>
+              <a href="https://arxiv.org/pdf/2401.12497" target="_blank" rel="noopener">paper</a> /
+              <a href="documents/cbm_slides.pdf" target="_blank">slides</a>
+            </p>
+          </article>
+
+          <article class="dissertation-project">
+            <h3>ELDEN</h3>
+            <p>Exploration via local dependencies induced by agent-object interactions.</p>
+            <p>
+              <a href="https://arxiv.org/pdf/2310.08702" target="_blank" rel="noopener">paper</a> /
+              <a href="documents/elden_poster.pdf" target="_blank">poster</a>
+            </p>
+          </article>
+
+          <article class="dissertation-project">
+            <h3>SkiLD</h3>
+            <p>Unsupervised skill discovery guided by factor interactions.</p>
+            <p>
+              <a href="https://wangzizhao.github.io/SkiLD/" target="_blank" rel="noopener">project page</a> /
+              <a href="https://arxiv.org/pdf/2410.18416" target="_blank" rel="noopener">paper</a> /
+              <a href="https://github.com/wangzizhao/SkiLD" target="_blank" rel="noopener">code</a>
+            </p>
+          </article>
+
+          <article class="dissertation-project">
+            <h3>Dyn-O</h3>
+            <p>Structured world models with object-centric representations.</p>
+            <p>
+              <a href="https://arxiv.org/pdf/2507.03298" target="_blank" rel="noopener">paper</a>
+            </p>
+          </article>
+
+          <article class="dissertation-project">
+            <h3>Factored Latent Action Models</h3>
+            <p>Action-grouped representations for learning structured latent dynamics.</p>
+            <p>
+              <a href="documents/dissertation.pdf" target="_blank">dissertation chapter</a>
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="dissertation-section" id="downloads">
+        <h2>Downloads</h2>
+        <p>
+          <a href="documents/dissertation.pdf" target="_blank">Full Dissertation (PDF)</a> /
+          <a href="documents/defense_slides.pdf" target="_blank">Defense Slides (PDF)</a>
+        </p>
+      </section>
+
+      <section class="dissertation-section" id="contact">
+        <h2>Contact</h2>
+        <p>
+          For questions or comments about this dissertation, please contact
+          <a href="mailto:zizhao.wang@utexas.edu">zizhao.wang@utexas.edu</a>.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
