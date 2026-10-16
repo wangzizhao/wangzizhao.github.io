@@ -15,7 +15,6 @@ figure a { display: block; }
 .publication-authors a { color: hsl(204, 86%, 53%) !important; }
 .publication-authors a:hover { text-decoration: underline; }
 .author-block { display: inline-block; }
-.equal-contribution { margin: 8px 0; font-size: 15px; }
 .publication-venue { color: #555; font-weight: bold; }
 .publication-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 12px; }
 .publication-links a { margin: 5px 0; font-weight: 700; }
