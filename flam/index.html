@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Factored Latent Action World Models (FLAM): independent latent actions for controllable world modeling in multi-entity environments. ICML 2026. Paper, code, and experiments.">
+    <title>FLAM | Factored Latent Action World Models</title>
+    <link rel="icon" href="../images/favicon/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CBitter:400,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="FLAM home">flam</a>
+      <nav aria-label="Project navigation">
+        <a href="#overview">Overview</a>
+        <a href="#experiments">Experiments</a>
+        <a href="../">Zizhao Wang</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="project-title">
+      <div class="hero-content">
+        <h1 id="project-title">Factored Latent Action World Models</h1>
+        <p class="subtitle">A latent action world model for multi-entity domains by decomposing the latent state into independent factors, each with its own inverse and forward dynamics model.</p>
+        <p class="authors"><a href="../">Zizhao Wang</a>, Chang Shi, <a href="https://jiahenghu.github.io/">Jiaheng Hu</a>, Kevin Rohling,<br class="author-break"> <a href="https://robertomartinmartin.com/">Roberto Martín-Martín</a>, <a href="https://amyzhang.github.io/">Amy Zhang</a>, <a href="https://www.cs.utexas.edu/~pstone/">Peter Stone</a></p>
+        <p class="venue">ICML 2026</p>
+        <div class="project-links" aria-label="Project resources">
+          <a href="https://arxiv.org/abs/2602.16229" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg>
+            Paper
+          </a>
+          <a href="https://github.com/wangzizhao/flam" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/></svg>
+            Code
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <main id="main">
+      <section id="overview" aria-labelledby="overview-title">
+        <h2 id="overview-title">Overview</h2>
+        <figure class="overview-figure">
+          <a href="assets/overview.png" aria-label="View the FLAM overview figure at full size">
+            <img src="assets/overview.png" width="1280" height="328" alt="A multi-entity traffic scene: a vanilla latent action model learns one combined action, while FLAM factors the state and learns independent actions for each car and cyclist.">
+          </a>
+        </figure>
+        <p>Learning latent actions from action-free video has emerged as a powerful paradigm for scaling up controllable world model learning. Latent actions provide a natural interface for users to iteratively generate and manipulate videos. However, most existing approaches rely on monolithic inverse and forward dynamics models that learn a single latent action to control the entire scene, and therefore struggle in complex environments where multiple entities act simultaneously.</p>
+        <p>This paper introduces Factored Latent Action Model (FLAM), a factored dynamics framework that decomposes the scene into independent factors, each inferring its own latent action and predicting its own next-step factor value. This factorized structure enables more accurate modeling of complex multi-entity dynamics and improves video generation quality in action-free video settings compared to monolithic models.</p>
+        <p>Based on experiments on both simulation and real-world multi-entity datasets, we find that FLAM outperforms prior work in prediction accuracy and representation quality, and facilitates downstream policy learning, demonstrating the benefits of factorized latent action models.</p>
+      </section>
+
+      <section id="experiments" aria-labelledby="experiments-title">
+        <h2 id="experiments-title">Experiments</h2>
+        <h3>Rollouts with inferred latent actions</h3>
+        <p>To assess dynamics modeling accuracy, we first infer latent actions from the ground-truth frames and then generate 10-step predictions autoregressively.</p>
+        <p>Example rollouts can be found below. The first row shows the ground truth future frames and predictions of all methods. The second row highlights the prediction errors.</p>
+
+        <figure class="rollout">
+          <figcaption>MultiGrid</figcaption>
+          <a href="assets/multigrid.gif" aria-label="View the MultiGrid rollout at full size"><img src="assets/multigrid.gif" width="1280" height="397" loading="lazy" alt="Animated MultiGrid rollout comparing ground truth, FLAM, and baseline predictions, with prediction errors below."></a>
+        </figure>
+        <figure class="rollout">
+          <figcaption>Bigfish</figcaption>
+          <a href="assets/bigfish.gif" aria-label="View the Bigfish rollout at full size"><img src="assets/bigfish.gif" width="1280" height="397" loading="lazy" alt="Animated Bigfish rollout comparing ground truth, FLAM, and baseline predictions, with prediction errors below."></a>
+        </figure>
+        <figure class="rollout">
+          <figcaption>Leaper</figcaption>
+          <a href="assets/leaper.gif" aria-label="View the Leaper rollout at full size"><img src="assets/leaper.gif" width="1280" height="397" loading="lazy" alt="Animated Leaper rollout comparing ground truth, FLAM, and baseline predictions, with prediction errors below."></a>
+        </figure>
+        <figure class="rollout">
+          <figcaption>Starpilot</figcaption>
+          <a href="assets/starpilot.gif" aria-label="View the Starpilot rollout at full size"><img src="assets/starpilot.gif" width="1280" height="397" loading="lazy" alt="Animated Starpilot rollout comparing ground truth, FLAM, and baseline predictions, with prediction errors below."></a>
+        </figure>
+        <figure class="rollout">
+          <figcaption>nuPlan</figcaption>
+          <a href="assets/nuplan.gif" aria-label="View the nuPlan rollout at full size"><img src="assets/nuplan.gif" width="1280" height="463" loading="lazy" alt="Animated nuPlan driving rollout comparing ground truth, FLAM, and baseline predictions, with prediction errors below."></a>
+        </figure>
+
+        <section class="experiment-section" aria-labelledby="control-title">
+          <h3 id="control-title">Rollouts with randomly sampled latent actions</h3>
+          <p>FLAM allows for changing / editing the motion of one entity without affecting the others. Here we show controllable video generation on the MultiGrid dataset.</p>
+          <p>We let a human user specify an entity to control, together with sampling a latent action from the prior distribution for each time step, and then roll out multiple steps. Meanwhile, the remaining entities that are not manipulated follow their original latent actions. The first row is the original video. Taking the first frame of the original video as the initial state, each of the following rows represents the generated video of manipulating one entity.</p>
+          <p>This demonstrates that latent actions can be used as a control variable to generate various video frames even with the same initial frame. Factorization offers the freedom of manipulating each entity independently instead of the monolithic scene, therefore leading to more diversity in video generation.</p>
+          <figure>
+            <a href="assets/controllable-generation.png" aria-label="View the controllable generation figure at full size"><img src="assets/controllable-generation.png" width="1280" height="960" loading="lazy" alt="MultiGrid trajectories showing independent control of the blue, green, purple, and red entities while the other entities preserve their original motion."></a>
+          </figure>
+        </section>
+
+        <section class="experiment-section" aria-labelledby="latent-title">
+          <h3 id="latent-title">Latent action visualization</h3>
+          <div class="visualization-layout">
+            <div>
+              <p>UMAP projection of the learned latent actions on the MultiGrid dataset. Each point corresponds to a latent action inferred by the IDM for one factor on a single transition from the observation-only dataset.</p>
+              <p>Points are colored by the ground-truth action taken by the corresponding agent at that transition (action labels are used only for visualization and are not used for training).</p>
+            </div>
+            <figure>
+              <a href="assets/latent-actions.png" aria-label="View the latent action visualization at full size"><img src="assets/latent-actions.png" width="1280" height="792" loading="lazy" alt="UMAP projection of FLAM latent actions on MultiGrid, colored by ground-truth action to show the learned action structure."></a>
+            </figure>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <a href="../">Zizhao Wang</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://sites.google.com/view/factored-lam">Original project page</a>
+    </footer>
+  </body>
+</html>
